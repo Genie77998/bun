@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+  },
+  "types": ["bun-types"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

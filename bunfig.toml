@@ -1,0 +1,8 @@
+[install]
+# set default registry as a string
+registry = "https://registry.npmmirror.com"
+
+# jsx = "react"
+# jsxFactory = "h"
+# jsxFragment = "Fragment"
+# jsxImportSource = "react"
