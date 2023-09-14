@@ -1,4 +1,4 @@
-import { renderToString } from 'react-dom/server'
+import { renderToReadableStream } from 'react-dom/server'
 import User from './components/user'
 
 import queryString from 'query-string'
@@ -14,8 +14,9 @@ Bun.serve({
         body: queryString.parse(body)
       })
     }
+    const stream = await renderToReadableStream(<User userName={url.searchParams.get('user') ?? 'Bun'} />)
     return new Response(
-      renderToString(<User userName={url.searchParams.get('user') ?? 'Bun'} />),
+      stream,
       {
         headers: {
           "Content-Type": "text/html",
