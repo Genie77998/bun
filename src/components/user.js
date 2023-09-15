@@ -82,7 +82,8 @@ export default ({ userName } = {}) => {
                   }}
                   pagination={{
                     position: ['bottomCenter'],
-                    showSizeChanger: true
+                    showSizeChanger: true,
+                    pageSizeOptions: [10, 20, 50]
                   }}
                 />
               </ConfigProvider>
