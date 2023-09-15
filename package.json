@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "bun --watch src/index.js",
-    "prestart": "bun build ./src/components/main.js --outdir ./public "
+    "prestart": "bun build ./src/components/main.js --outdir ./dist "
   },
   "dependencies": {
     "bun-types": "^1.0.1",

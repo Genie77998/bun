@@ -9,7 +9,7 @@ Bun.serve({
   async fetch(req) {
     const url = new URL(req.url)
     
-    if (url.pathname.startsWith('/public')) {
+    if (url.pathname.startsWith('/dist')) {
       return new Response(Bun.file(path.join('.', url.pathname)))
     }
     if (req.method.toLocaleLowerCase() == 'post') {

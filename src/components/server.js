@@ -9,7 +9,7 @@ export default (props = {}) =>{
         </div>
       </body>
       <script dangerouslySetInnerHTML={{ __html: `var __INIT_DATA__ = ${JSON.stringify(props)}`}}></script>
-      <script src="/public/main.js"></script>
+      <script src="/dist/main.js"></script>
     </html>
   )
 }
