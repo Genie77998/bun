@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 export default ({ userName } = {}) =>{
   useEffect(() => {
-    console.log('client render')
+    console.log('client render', userName)
   }, [])
 
   const clickFn = async () => {
