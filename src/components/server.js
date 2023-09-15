@@ -4,7 +4,7 @@ export default (props = {}) =>{
   return (
     <html>
       <body>
-        <div id="app">
+        <div id="app" style={{ margin: 20 }}>
           <User userName={userName} />
         </div>
       </body>

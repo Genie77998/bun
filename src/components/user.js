@@ -44,55 +44,52 @@ export default ({ userName } = {}) => {
   }
   
   return (
-    <html>
-      <body style={{ margin: 20}}>
-        <div style={{ textAlign: 'center', marginBottom: 20 }}>hello, {userName}</div>
-        {
-          isClient ? (
-            <div style={{ maxWidth: 1200, margin: '0 auto'}}>
-              <ConfigProvider locale={zhCN.default}>
-                <Form
-                  {...layout}
-                  colon={false}
-                  form={form}
-                  name="control-hooks"
+    <>
+      <div style={{ textAlign: 'center', marginBottom: 20 }}>hello, {userName}</div>
+      {
+        isClient ? (
+          <div style={{ maxWidth: 1200, margin: '0 auto'}}>
+            <ConfigProvider locale={zhCN.default}>
+              <Form
+                {...layout}
+                colon={false}
+                form={form}
+                name="control-hooks"
+              >
+                <Form.Item
+                  name="userLength"
+                  label="用户数量："
+                  rules={[
+                    {
+                      required: true,
+                      message: '请填写用户数量'
+                    },
+                  ]}
                 >
-                  <Form.Item
-                    name="userLength"
-                    label="用户数量："
-                    rules={[
-                      {
-                        required: true,
-                        message: '请填写用户数量'
-                      },
-                    ]}
-                  >
-                    <InputNumber placeholder='请输入' style={{ width: 200 }} min={1} max={10000} />
-                  </Form.Item>
-                  <Form.Item label=" ">
-                    <Button loading={loading} onClick={onSubmit} type="primary">查询</Button>
-                  </Form.Item>
-                </Form>
-                <Table
-                  loading={loading}
-                  columns={columns}
-                  dataSource={dataSource}
-                  scroll={{
-                    y: 500,
-                  }}
-                  pagination={{
-                    position: ['bottomCenter'],
-                    showSizeChanger: true,
-                    pageSizeOptions: [10, 20, 50]
-                  }}
-                />
-              </ConfigProvider>
-            </div>
-          ) : null
-        }
-        
-      </body>
-    </html>
+                  <InputNumber placeholder='请输入' style={{ width: 200 }} min={1} max={10000} />
+                </Form.Item>
+                <Form.Item label=" ">
+                  <Button loading={loading} onClick={onSubmit} type="primary">查询</Button>
+                </Form.Item>
+              </Form>
+              <Table
+                loading={loading}
+                columns={columns}
+                dataSource={dataSource}
+                scroll={{
+                  y: 500,
+                }}
+                pagination={{
+                  position: ['bottomCenter'],
+                  showSizeChanger: true,
+                  pageSizeOptions: [10, 20, 50]
+                }}
+              />
+            </ConfigProvider>
+          </div>
+        ) : null
+      }
+    </>
   )
 }
 
