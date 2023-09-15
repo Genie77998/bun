@@ -1,8 +1,7 @@
 import path from 'path'
 import { renderToReadableStream } from 'react-dom/server'
 import App from './components/server'
-
-import queryString from 'query-string'
+import getData from './data'
 
 Bun.serve({
   port: 9090,
@@ -16,7 +15,7 @@ Bun.serve({
       const body = await req.text()
       return Response.json({
         success: true,
-        body: JSON.parse(body)
+        data: getData(JSON.parse(body)?.userLength ?? 10)
       })
     }
     const stream = await renderToReadableStream(<App userName={url.searchParams.get('user') ?? 'Bun'} />)

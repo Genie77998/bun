@@ -6,6 +6,7 @@
     "serve": "bun src/index.js"
   },
   "dependencies": {
+    "antd": "^5.9.0",
     "bun-types": "^1.0.1",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
